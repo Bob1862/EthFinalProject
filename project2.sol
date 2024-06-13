@@ -17,8 +17,8 @@ pragma solidity >=0.6.12 <0.9.0;
 
 contract MyToken {
     // Public variables to store details about the coin
-    string public tokenName = "ASHWANI";
-    string public tokenAbbrv = "SINGH";
+    string public tName = "ASHWANI";
+    string public tAbbrv = "SINGH";
     uint public totalSupply = 0;
 
     // Mapping of addresses to balances
