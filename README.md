@@ -17,8 +17,33 @@ The program consists of:
 
 To run this program, you can use Remix, an online Solidity IDE. To get started, go to the Remix website at https://remix.ethereum.org/. Once you are on the Remix website, create a new file by clicking on the "+" icon in the left-hand sidebar. Save the "project2" file in my repo with a .sol extension. Now compile and deploy the program.
 
-KINDLY REFER TO PROJECT2 FILE TO SEE THE CODE
+## CODE
+```solidity 
+pragma solidity >=0.6.12 <0.9.0;
+contract MyToken {
+    // Public variables to store details about the coin
+    string public tName = "ASHWANI";
+    string public tAbbrv = "SINGH";
+    uint public totalSupply = 0;
 
+    // Mapping of addresses to balances
+    mapping(address => uint) public balances;
+
+    // Mint function to increase total supply and balance of a given address
+    function mint(address _address, uint _value) public {
+        totalSupply += _value;
+        balances[_address] += _value;
+    }
+
+    // Burn function to decrease total supply and balance of a given address
+    function burn(address _address, uint _value) public {
+        if(balances[_address] >= _value){
+        totalSupply -= _value;
+        balances[_address] -= _value;
+      }
+     }
+ }
+```
 
 
 To compile the code, click on the "Solidity Compiler" tab in the left-hand sidebar. Make sure the "Compiler" option is set to "0.8.4" (or another compatible version), and then click on the "Compile  project2.sol" button.
